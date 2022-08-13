@@ -1,0 +1,9 @@
+@import 'vars';
+
+:host {
+  padding: 1px 4px;
+  color: $light;
+  font-size: 11px;
+  line-height: 17px;
+  background-color: $primary;
+}
