@@ -1,0 +1,12 @@
+<div class="avatar-container" [ngClass]="size || ''">
+  <img
+    *ngIf="imageSrc && !imageLoadingError; else initialsAvatar"
+    [src]="imageSrc"
+    alt="{{name}} profile picture"
+    (error)="imageLoadingError = true"
+  >
+
+  <ng-template #initialsAvatar>
+    <span>{{ initials }}</span>
+  </ng-template>
+</div>
