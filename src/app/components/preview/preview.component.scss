@@ -1,0 +1,30 @@
+@import 'vars';
+
+:host {
+  display: flex;
+  min-height: 100%;
+  align-items: center;
+  justify-content: center;
+
+  @media print {
+    visibility: hidden;
+  }
+}
+
+header {
+  background-color: $primary;
+}
+
+.paper {
+  margin: 0 auto;
+  display: flex;
+  width: 695px;
+  min-height: 842px;
+  flex-direction: column;
+
+  @media print {
+    visibility: visible;
+    width: 2480px;
+    min-height: 3508px;
+  }
+}
