@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "montadorCurriculo": {
+    "resumeBuilder": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -22,7 +22,7 @@
                 "src/styles"
               ]
             },
-            "outputPath": "dist/montador-curriculo",
+            "outputPath": "dist/resume-builder",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -74,10 +74,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "montadorCurriculo:build:production"
+              "browserTarget": "resumeBuilder:build:production"
             },
             "development": {
-              "browserTarget": "montadorCurriculo:build:development"
+              "browserTarget": "resumeBuilder:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -85,7 +85,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "montadorCurriculo:build"
+            "browserTarget": "resumeBuilder:build"
           }
         },
         "test": {
