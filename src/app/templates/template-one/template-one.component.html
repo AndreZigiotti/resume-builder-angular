@@ -1,0 +1,144 @@
+<header>
+  <img class="picture" [src]="bio?.picture || 'https://via.placeholder.com/90x90'" alt="">
+
+  <div class="bio">
+    <h1>{{ bio?.name }}</h1>
+    <h3>{{ bio?.occupation }}</h3>
+    <p>{{ bio?.description }}</p>
+  </div>
+
+  <hr class="divider default">
+
+  <div class="info">
+    <label>E-mail</label>
+    <p>{{ bio?.email }}</p>
+    <label>Endereço</label>
+    <p>{{ bio?.address }}</p>
+    <label>Telefone</label>
+    <p>{{ bio?.phone }}</p>
+    <label>Data de nascimento</label>
+    <p>{{ bio?.birthday }}</p>
+    <label>Nacionalidade</label>
+    <p>{{ bio?.nationality }}</p>
+
+    <ng-container *ngIf="bio?.salary">
+      <label>Pretensão salarial</label>
+      <p>{{ bio?.salary }}</p>
+    </ng-container>
+
+    <label>Links</label>
+    <p *ngFor="let link of bio?.links">{{ link }}</p>
+  </div>
+</header>
+
+<main>
+  <section *ngIf="bio?.experiences?.length">
+    <h2 class="title">Experiência</h2>
+
+    <div class="container" *ngFor="let exp of bio?.experiences">
+      <div class="row">
+        <div class="col">
+          <div class="info">
+            <p class="location">{{ exp.location }}</p>
+            <p class="date">{{ exp.startDate }} - {{ exp.endDate || 'Present' }}</p>
+          </div>
+        </div>
+
+        <hr class="divider" aria-hidden="true">
+
+        <div class="col large">
+          <div class="details">
+            <p>{{ exp.occupation }}</p>
+            <p class="strong primary">{{ exp.enterprise }}</p>
+            <p>{{ exp.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section *ngIf="bio?.education?.length">
+    <h2 class="title">Educação</h2>
+
+    <div class="container" *ngFor="let edu of bio?.education">
+      <div class="row">
+        <div class="col">
+          <div class="info">
+            <p class="location">{{ edu.location }}</p>
+            <p class="date">{{ edu.startDate }} - {{ edu.endDate || 'Cursando' }}</p>
+          </div>
+        </div>
+
+        <hr class="divider" aria-hidden="true">
+
+        <div class="col large">
+          <div class="details">
+            <p>{{ edu.grade }}</p>
+            <p class="strong primary">{{ edu.institution }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills-section" *ngIf="bio?.skills?.length">
+    <div class="container">
+      <div class="row">
+        <div class="col large">
+          <h2 class="title">Habilidades</h2>
+
+          <div class="info">
+            <div class="tag-cloud">
+              <cv-tag *ngFor="let skill of bio?.skills" [title]="skill"></cv-tag>
+            </div>
+          </div>
+        </div>
+
+        <hr class="divider" aria-hidden="true">
+
+        <div id="languages" class="col">
+          <h2 class="title">Idiomas</h2>
+
+          <div class="details">
+            <ng-container *ngFor="let language of bio?.languages">
+              <p class="strong">{{ language?.language }}</p>
+              <p>{{ language.experience }}</p>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" *ngIf="bio?.projects?.length">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h2 class="title">Projetos</h2>
+        </div>
+
+        <div class="col large">
+          <div class="details">
+            <p *ngFor="let project of bio?.projects">{{ project }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" *ngIf="bio?.certificates?.length">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h2 class="title">Diplomas e Cursos</h2>
+        </div>
+
+        <div class="col large">
+          <div class="details">
+            <p *ngFor="let cert of bio?.certificates">- {{ cert }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

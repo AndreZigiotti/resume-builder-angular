@@ -1,0 +1,164 @@
+@import 'vars';
+
+:host {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.divider {
+  position: relative;
+  margin: 0;
+  width: 1px;
+  border: none;
+  background-color: #BABABA;
+
+  &:not(.default)::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 7px;
+    height: 7px;
+    border-radius: 100%;
+    background-color: $primary;
+    transform: translate(-50%, 0);
+  }
+}
+
+.strong {
+  font-weight: bold !important;
+}
+
+.primary {
+  color: $primary;
+}
+
+.container {
+
+  .row {
+    display: flex;
+    gap: 22px;
+
+    .col {
+      flex: 1;
+
+      &.large {
+        flex-basis: 32%;
+      }
+    }
+  }
+}
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+header {
+  display: flex;
+  padding: 20px 50px;
+  background-color: $primary;
+
+  img {
+    margin-right: 8px;
+    width: 63px;
+    height: 63px;
+    border-radius: 100%;
+  }
+
+  hr {
+    margin: 0 8px;
+    position: relative;
+    flex-basis: 1px;
+    flex-shrink: 0;
+    border: none;
+    background-color: $light;
+  }
+
+  h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 18px;
+    line-height: 21px;
+  }
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+  p {
+    margin-bottom: 4px;
+  }
+
+  .info {
+    width: 170px;
+    flex-shrink: 0;
+  }
+}
+
+main {
+  padding: 0 50px 20px;
+  color: $default;
+  background-color: $light;
+  flex: 1;
+
+  section {
+    padding-top: 22px;
+    border-bottom: 1px solid #BABABA;
+
+    .title {
+      font-weight: 400;
+    }
+
+    .info, .details {
+      padding-bottom: 22px;
+
+      & > *:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .location, .date {
+      margin-bottom: 0;
+      font-size: 11px;
+      line-height: 13px;
+    }
+
+    .date {
+      font-style: italic;
+    }
+  }
+}
+
+#languages {
+  flex: 0;
+  flex-basis: 124px;
+}
+
+#projects {
+  p:not(:last-child) {
+    margin-bottom: 22px;
+  }
+}
+
+#skills-section {
+  padding-top: 0;
+
+  .col {
+    padding-top: 22px;
+  }
+
+  .divider {
+    &::before {
+      display: none;
+    }
+  }
+}
