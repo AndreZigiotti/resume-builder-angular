@@ -1,0 +1,27 @@
+:host {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: inherit;
+}
+
+header {
+  display: flex;
+  padding: 8px var(--cv-container-gap);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-size: 1rem;
+}
+
+.profile-menu-button {
+
+  .button-content-wrapper {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+}

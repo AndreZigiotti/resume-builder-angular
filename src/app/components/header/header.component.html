@@ -1,1 +1,16 @@
-<p>header works!</p>
+<header class="mat-elevation-z1 app-header">
+  <a cv-link routerLink="wizard" class="brand">
+    <h1 class="h5">Resume Builder</h1>
+  </a>
+
+  <button class="profile-menu-button" mat-button [matMenuTriggerFor]="profileMenu">
+    <span class="button-content-wrapper">
+      <span>André Luiz</span>
+      <cv-avatar size="small" name="andreZigiotti" imageSrc="https://fillmurray.com/90/90"></cv-avatar>
+    </span>
+  </button>
+  <mat-menu #profileMenu="matMenu" xPosition="after">
+    <button mat-menu-item>Profile</button>
+    <button mat-menu-item>Logout</button>
+  </mat-menu>
+</header>
