@@ -1,4 +1,6 @@
 @use '@angular/material' as mat;
+@use './links-theme' as link;
+@use './header-theme' as header;
 
 @include mat.core();
 
@@ -21,7 +23,11 @@ $dark-theme: mat.define-dark-theme((
 ));
 
 @include mat.all-component-themes($light-theme);
+@include link.theme($light-theme);
+@include header.theme($light-theme);
 
 .theme-dark {
   @include mat.all-component-themes($dark-theme);
+  @include link.theme($dark-theme);
+  @include header.theme($dark-theme);
 }

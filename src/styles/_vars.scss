@@ -7,3 +7,8 @@ $primary:     $green;
 $default:     $black;
 $light:       $white;
 $lightBg:     $lightGreen;
+
+:root {
+  --cv-header-height: 57px;
+  --cv-container-gap: 16px;
+}
